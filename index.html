@@ -1,20 +1,28 @@
 <html>
   <head>
     <script src="https://cdn.jsdelivr.net/npm/p5@1.3.1/lib/p5.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
   </head>
   <body>
     <div class="container">
       <div class="first sketch"></div>
       <div class="second sketch"></div>
-      <div class="combined sketch"></div>
+      <div class="combined sketch">
+        <div class="pdf-button">
+          <p>export to pdf</p>
+        </div>
+      </div>
     </div>
   </body>
+  <!--insert sketches after body-->
   <script src="sketches/first.js"></script>
   <script src="sketches/second.js"></script>
   <script src="sketches/combined.js"></script>
 </html>
 
 <style>
+  html { overflow: hidden; }
   .container {
     height: 100vh;
     width: 100vw;
@@ -27,6 +35,24 @@
   .sketch {
     height: 70.5vh;
     width: 50vh;
-    background: red;
+
+    border: 2px solid black;
   }
+  .pdf-button {
+    height: 5vh;
+    width: 30vh;
+
+    border: 2px solid black;
+    position: absolute;
+    top: 90%;
+    
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    user-select: none;
+    cursor: pointer;
+  }
+  p { margin: 0; font-family: 'Courier New', Courier, monospace; }
 </style>

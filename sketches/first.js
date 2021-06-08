@@ -1,19 +1,21 @@
-let firstContainer = document.getElementsByClassName('first')[0];
+// f = first
+const fContainer = document.getElementsByClassName('first')[0];  // container div element
+let fState;
 
 const firstSketch = ( p ) => {
-
-  let x = 100;
-  let y = 100;
-
   p.setup = () => {
-    p.createCanvas(firstContainer.offsetWidth, firstContainer.offsetHeight);
+    p.createCanvas(fContainer.offsetWidth, fContainer.offsetHeight);
+    fState = p.createGraphics(sContainer.offsetWidth, sContainer.offsetHeight);
   };
 
   p.draw = () => {
-    p.background(0);
-    p.fill(255);
-    p.rect(x,y,50,50);
+    fState.noStroke();
+    fState.fill(0);
+    fState.rect(50, 400, 100, 100);
+
+    p.image(fState, 0, 0);
   };
 };
 
-const first = new p5(firstSketch, firstContainer);
+// initialize with container
+const first = new p5(firstSketch, fContainer);

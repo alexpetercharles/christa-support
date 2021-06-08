@@ -1,19 +1,21 @@
-let secondContainer = document.getElementsByClassName('second')[0];
+// s = second
+const sContainer = document.getElementsByClassName('second')[0]; // container div element
+let sState;
 
 const secondSketch = ( p ) => {
-
-  let x = 100;
-  let y = 100;
-
   p.setup = () => {
-    p.createCanvas(secondContainer.offsetWidth, secondContainer.offsetHeight);
+    p.createCanvas(sContainer.offsetWidth, sContainer.offsetHeight);
+    sState = p.createGraphics(sContainer.offsetWidth, sContainer.offsetHeight);
   };
 
   p.draw = () => {
-    p.background(0);
-    p.fill(255);
-    p.rect(x,y,50,50);
+    sState.noStroke();
+    sState.fill(0);
+    sState.rect(50, 50, 300, 300);
+
+    p.image(sState, 0, 0);
   };
 };
 
-const second = new p5(secondSketch, secondContainer);
+// initialize with container
+const second = new p5(secondSketch, sContainer);
