@@ -5,15 +5,15 @@
   </head>
   <body>
     <div class="container">
-      <div class="first sketch">
-        <!--
-        <div class="pdf-button">
-          <p>some button</p>
+      <div class="sketch">
+        <div class="counter button">
+          <p></p>
         </div>
-        -->
+        <div class="restart button">
+          <p>restart</p>
+        </div>
       </div>
     </div>
-    <video class="camera" autoplay muted playsinline/>
   </body>
   <!--insert sketches after body-->
   <script src="sketch.js"></script>
@@ -37,7 +37,7 @@
 
     border: 2px solid black;
   }
-  .pdf-button {
+  .button {
     height: 5vh;
     width: 30vh;
 
@@ -53,16 +53,12 @@
     user-select: none;
     cursor: pointer;
   }
-  p { margin: 0; font-family: 'Courier New', Courier, monospace; }
 
-  video {
-    height: 20vh;
-    width: 20vh;
-    object-fit: cover;
-
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    display: hidden;
+  .counter {
+    height: 5vh !important;
+    width: 5vh !important;
+    top: 5% !important;
+    cursor: auto;
   }
+  p { margin: 0; font-family: 'Courier New', Courier, monospace; }
 </style>
